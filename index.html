@@ -3,64 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <title>FisharBotX Dashboard</title>
+  <meta name="description" content="FisharBotX - Advanced Telegram Bot for Phone Number Analysis">
+  <meta name="keywords" content="FisharBotX, Telegram Bot, Phone Analysis, Truecaller, OSINT">
+  <meta name="author" content="Mohamed Fisher">
+  <meta property="og:title" content="FisharBotX Dashboard">
+  <meta property="og:description" content="Advanced Telegram Bot for Phone Number Analysis">
+  <meta property="og:image" content="https://via.placeholder.com/200x200.png?text=FisharBotX">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      text-align: center;
-      padding: 40px;
-    }
-    h1 {
-      color: #333;
-    }
-    table {
-      margin: 20px auto;
-      border-collapse: collapse;
-      width: 80%;
-    }
-    table, th, td {
-      border: 1px solid #999;
-      padding: 10px;
-    }
-    th {
-      background: #1e90ff;
-      color: white;
-    }
-    button {
-      padding: 10px 20px;
-      margin: 10px;
-      background: #00bfff;
-      border: none;
-      color: white;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #1e90ff;
-    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Arial;background:#0a0a1a;color:#fff;text-align:center;padding:40px 20px;transition:0.3s;min-height:100vh}
+    .container{max-width:700px;margin:0 auto}
+    h1{color:#00d2ff;font-size:2.5em;margin-bottom:10px}
+    .subtitle{color:#aaa;margin-bottom:30px}
+    .card{background:#1a1a3e;padding:25px;border-radius:15px;margin:15px 0;border:1px solid #333}
+    table{width:100%;border-collapse:collapse;margin:15px 0}
+    th{background:#00d2ff;color:#000;padding:12px}
+    td{padding:10px;border-bottom:1px solid #333}
+    .btn{display:inline-block;padding:12px 25px;margin:8px;border-radius:10px;border:none;font-weight:bold;cursor:pointer;font-size:16px;transition:0.3s}
+    .btn-blue{background:#00d2ff;color:#000}
+    .btn-green{background:#00ff88;color:#000}
+    .btn-gold{background:#ffd700;color:#000}
+    .btn-red{background:#ff4444;color:#fff}
+    .btn:hover{opacity:0.8;transform:scale(1.05)}
+    input{padding:12px;margin:8px;border-radius:8px;border:2px solid #00d2ff;background:#0f0f23;color:#fff;font-size:16px;width:80%}
+    .dark-mode{background:#fff;color:#000}
+    .dark-mode .card{background:#f0f0f0;border-color:#ddd}
+    .dark-mode h1{color:#1a1a4e}
+    .dark-mode input{background:#fff;color:#000;border-color:#1a1a4e}
+    #clock{font-size:1.2em;color:#00d2ff;margin:15px 0}
+    footer{margin-top:30px;color:#666}
+    footer a{color:#00d2ff;margin:0 10px;text-decoration:none}
+    @media(max-width:600px){h1{font-size:1.8em}input{width:100%}.btn{width:100%;margin:5px 0}}
   </style>
 </head>
 <body>
-  <h1>FisharBotX Dashboard 🚀</h1>
-  <table>
-    <tr><th>Task</th><th>Status</th></tr>
-    <tr><td>Bot Connection</td><td>Active</td></tr>
-    <tr><td>Database</td><td>Connected</td></tr>
-  </table>
-  <button id="refreshBtn">Refresh</button>
-  <button id="openBotBtn">Open Bot</button>
+  <div class="container">
+    <h1>👁️ FisharBotX Dashboard 🚀</h1>
+    <p class="subtitle">Advanced Telegram Bot | Phone Analysis | Truecaller | OSINT</p>
+
+    <div class="card">
+      <table>
+        <tr><th>Service</th><th>Status</th></tr>
+        <tr><td>🤖 Bot Connection</td><td style="color:#00ff88">✅ Active</td></tr>
+        <tr><td>💾 Database</td><td style="color:#00ff88">✅ Connected</td></tr>
+        <tr><td>🧠 AI (Llama 3.3)</td><td style="color:#00ff88">✅ Online</td></tr>
+        <tr><td>🔍 Search</td><td style="color:#00ff88">✅ Online</td></tr>
+      </table>
+    </div>
+
+    <div>
+      <a href="https://t.me/FisharX1bot" class="btn btn-blue" target="_blank">🤖 Open Bot</a>
+      <button class="btn btn-green" onclick="location.reload()">🔄 Refresh</button>
+      <button class="btn btn-gold" onclick="checkStatus()">✅ Check Status</button>
+      <button class="btn btn-red" id="darkBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+      <button class="btn btn-blue" onclick="showNotification()">🔔 Notify</button>
+    </div>
+
+    <div id="statusMsg" style="margin:15px 0;font-size:1.2em"></div>
+    <div id="clock"></div>
+
+    <div class="card">
+      <h2 style="color:#00d2ff;margin-bottom:15px">📨 Send Message</h2>
+      <form id="messageForm">
+        <input type="text" id="userName" placeholder="Your Name" required><br>
+        <input type="text" id="userMessage" placeholder="Your Message" required><br>
+        <button type="submit" class="btn btn-green">Submit</button>
+      </form>
+      <div id="formOutput" style="margin-top:15px;font-size:1.1em"></div>
+    </div>
+
+    <footer>
+      <a href="/terms">Terms</a> | 
+      <a href="/privacy">Privacy</a> | 
+      <a href="/contact">Contact</a>
+      <p style="margin-top:10px">👁️ FisharBotX v12 | @QR_l4</p>
+    </footer>
+  </div>
 
   <script>
-    // زرار Refresh
-    document.getElementById("refreshBtn").addEventListener("click", () => {
-      location.reload();
+    let dark = false;
+    function toggleDark() {
+      dark = !dark;
+      document.body.classList.toggle("dark-mode", dark);
+      document.getElementById("darkBtn").textContent = dark ? "☀️ Light Mode" : "🌙 Dark Mode";
+    }
+    function checkStatus() {
+      document.getElementById("statusMsg").innerHTML = '<span style="color:#00ff88">✅ All systems operational</span>';
+      setTimeout(() => document.getElementById("statusMsg").innerHTML = '', 3000);
+    }
+    function showNotification() {
+      if (Notification.permission === "granted") {
+        new Notification("FisharBotX", { body: "Everything is working fine! 🚀" });
+      } else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then(perm => { if (perm === "granted") showNotification(); });
+      }
+      alert("🔔 FisharBotX: All systems online!");
+    }
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("clock").innerText = now.toLocaleDateString("en-US") + " " + now.toLocaleTimeString("en-US");
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    document.getElementById("messageForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("userName").value;
+      const msg = document.getElementById("userMessage").value;
+      localStorage.setItem("savedMessage", JSON.stringify({ name, msg, time: new Date().toISOString() }));
+      document.getElementById("formOutput").innerHTML = `<span style="color:#00ff88">👤 ${name}:</span> ${msg}`;
     });
 
-    // زرار Open Bot
-    document.getElementById("openBotBtn").addEventListener("click", () => {
-      window.open("https://t.me/FisharX1bot", "_blank");
-    });
+    const saved = JSON.parse(localStorage.getItem("savedMessage"));
+    if (saved) document.getElementById("formOutput").innerHTML = `<span style="color:#00ff88">👤 ${saved.name}:</span> ${saved.msg}`;
   </script>
 </body>
 </html>
