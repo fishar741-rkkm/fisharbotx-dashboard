@@ -3,8 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <title>FisharBotX Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #333;
+    }
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 80%;
+    }
+    table, th, td {
+      border: 1px solid #999;
+      padding: 10px;
+    }
+    th {
+      background: #1e90ff;
+      color: white;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      background: #00bfff;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1e90ff;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to FisharBotX Dashboard 🚀</h1>
+  <h1>FisharBotX Dashboard 🚀</h1>
+  <table>
+    <tr><th>Task</th><th>Status</th></tr>
+    <tr><td>Bot Connection</td><td>Active</td></tr>
+    <tr><td>Database</td><td>Connected</td></tr>
+  </table>
+  <button>Refresh</button>
+  <button>Open Bot</button>
 </body>
 </html>
