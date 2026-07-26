@@ -48,7 +48,19 @@
     <tr><td>Bot Connection</td><td>Active</td></tr>
     <tr><td>Database</td><td>Connected</td></tr>
   </table>
-  <button>Refresh</button>
-  <button>Open Bot</button>
+  <button id="refreshBtn">Refresh</button>
+  <button id="openBotBtn">Open Bot</button>
+
+  <script>
+    // زرار Refresh
+    document.getElementById("refreshBtn").addEventListener("click", () => {
+      location.reload();
+    });
+
+    // زرار Open Bot
+    document.getElementById("openBotBtn").addEventListener("click", () => {
+      window.open("https://t.me/FisharX1bot", "_blank");
+    });
+  </script>
 </body>
 </html>
