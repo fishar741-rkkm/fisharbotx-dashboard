@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FisharBotX API Docs</title>
+  <style>
+    body {font-family: Arial; background:#f4f4f4; padding:40px;}
+    h1 {color:#333;}
+    pre {background:#eee; padding:10px; border-radius:6px;}
+    code {color:#1e90ff;}
+  </style>
+</head>
+<body>
+  <h1>FisharBotX API Documentation 🚀</h1>
+  <p>Welcome to the FisharBotX API. Below are the available endpoints:</p>
+
+  <h2>Register User</h2>
+  <p><strong>POST /register</strong></p>
+  <pre>
+Request Body:
+{
+  "name": "User Name",
+  "email": "user@example.com",
+  "password": "123456"
+}
+
+Response:
+{
+  "id": 1,
+  "name": "User Name",
+  "email": "user@example.com"
+}
+  </pre>
+
+  <h2>Login User</h2>
+  <p><strong>POST /login</strong></p>
+  <pre>
+Request Body:
+{
+  "email": "user@example.com",
+  "password": "123456"
+}
+
+Response:
+{
+  "message": "Login successful",
+  "user": {
+    "id": 1,
+    "name": "User Name",
+    "email": "user@example.com"
+  }
+}
+  </pre>
+
+  <h2>Notes</h2>
+  <ul>
+    <li>All requests should be sent as JSON.</li>
+    <li>Server runs locally on <code>http://localhost:4000</code>.</li>
+    <li>Future versions will include token-based authentication.</li>
+  </ul>
+
+  <footer>
+    <p>FisharBotX © 2026 | <a href="/terms.html">Terms</a> | <a href="/privacy.html">Privacy</a> | <a href="/contact.html">Contact</a></p>
+  </footer>
+</body>
+</html>
