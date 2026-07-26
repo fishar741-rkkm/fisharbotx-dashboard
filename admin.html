@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Admin - FisharBotX</title>
+<style>body{background:#0a0a1a;color:#fff;font-family:Arial;padding:30px;text-align:center}h1{color:#00ff88}.card{background:#1a1a3e;padding:20px;border-radius:15px;margin:15px;border:1px solid #333}.btn{padding:10px 20px;margin:5px;border-radius:8px;border:none;cursor:pointer;font-weight:bold}</style></head>
+<body>
+  <h1>🔐 Admin Panel</h1>
+  <div class="card"><h2>Welcome, Admin!</h2><p>Total Users: 156</p><p>Total Reports: 1,234</p><p>VIP Users: 23</p></div>
+  <button class="btn" onclick="logout()" style="background:#ff4444;color:#fff">Logout</button>
+  <script>
+    if (!localStorage.getItem("fisharbotx_auth")) window.location.href = "/login.html";
+    function logout() { localStorage.removeItem("fisharbotx_auth"); window.location.href = "/"; }
+  </script>
+</body>
+</html>

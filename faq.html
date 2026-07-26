@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>FAQ - FisharBotX</title>
+<style>
+  body{background:#0a0a1a;color:#fff;font-family:Arial;padding:50px 20px;max-width:800px;margin:0 auto}
+  h1{color:#00d2ff;text-align:center;margin-bottom:30px}
+  .faq-item{background:#1a1a3e;padding:20px;border-radius:10px;margin:10px 0;border:1px solid #333;cursor:pointer}
+  .faq-item h3{color:#00d2ff;margin-bottom:10px}
+  .faq-item p{color:#aaa;display:none}
+  .faq-item.active p{display:block}
+  .faq-item:hover{border-color:#00d2ff}
+</style></head>
+<body>
+  <h1>❓ Frequently Asked Questions</h1>
+  
+  <div class="faq-item" onclick="this.classList.toggle('active')">
+    <h3>📱 How does phone analysis work?</h3>
+    <p>We use multiple APIs (Numverify, Truecaller, DuckDuckGo) to analyze phone numbers and provide carrier, location, spam score, and owner name information.</p>
+  </div>
+  
+  <div class="faq-item" onclick="this.classList.toggle('active')">
+    <h3>🔒 Is my data safe?</h3>
+    <p>Yes! You can enable privacy mode to hide your data. We never share personal information with third parties.</p>
+  </div>
+  
+  <div class="faq-item" onclick="this.classList.toggle('active')">
+    <h3>💎 How does VIP work?</h3>
+    <p>VIP gives you unlimited analysis, Truecaller access, PDF export, and priority support. Plans start at $5/month.</p>
+  </div>
+  
+  <div class="faq-item" onclick="this.classList.toggle('active')">
+    <h3>🆓 Is there a free trial?</h3>
+    <p>Yes! Send "تجربة" to the bot to get 3 days free VIP access.</p>
+  </div>
+  
+  <div class="faq-item" onclick="this.classList.toggle('active')">
+    <h3>🎁 How does referral work?</h3>
+    <p>Share your referral link. For each new user who joins, you earn 10 points. 100 points = 1 month free VIP!</p>
+  </div>
+  
+  <p style="text-align:center;margin-top:30px"><a href="/" style="color:#00d2ff">Back to Home</a></p>
+</body>
+</html>

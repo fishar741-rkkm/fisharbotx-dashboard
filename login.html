@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - FisharBotX</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:linear-gradient(135deg,#0a0a1a,#1a1a4e);color:#fff;font-family:Arial;display:flex;justify-content:center;align-items:center;min-height:100vh}
+    .login-box{background:#1a1a3e;padding:40px;border-radius:20px;text-align:center;border:1px solid #333;width:350px}
+    h1{color:#00d2ff;margin-bottom:20px}
+    input{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:2px solid #00d2ff;background:#0f0f23;color:#fff;font-size:16px}
+    .btn{width:100%;padding:12px;background:#00d2ff;color:#000;border:none;border-radius:8px;font-weight:bold;cursor:pointer;font-size:16px;margin:10px 0}
+    .btn:hover{background:#00ff88}
+    .links{margin-top:15px}
+    .links a{color:#00d2ff;text-decoration:none;margin:0 10px}
+    #msg{color:#ff4444;margin:10px 0}
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h1>👁️ FisharBotX</h1>
+    <p style="color:#aaa;margin-bottom:20px">Admin Login</p>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button class="btn" onclick="login()">🔐 Login</button>
+    <div id="msg"></div>
+    <div class="links">
+      <a href="/">Home</a> | 
+      <a href="/register.html">Register</a>
+    </div>
+  </div>
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      if (user === "admin" && pass === "fisharbotx2024") {
+        localStorage.setItem("fisharbotx_auth", "true");
+        window.location.href = "/admin.html";
+      } else {
+        document.getElementById("msg").innerText = "❌ Invalid credentials";
+      }
+    }
+  </script>
+</body>
+</html>
